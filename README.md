@@ -23,6 +23,6 @@ The complexity of the project lies in the DatabaseAccessorObject referencing the
 
 
 
-<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/film_actor.png" width="100" height="250">
+<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/film_actor.png" width="150" height="250">
 
 "select id, first_name, last_name from actor join film_actor on actor.id = film_actor.actor_id where film_actor.film_id = ?"
