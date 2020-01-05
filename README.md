@@ -2,4 +2,4 @@
 
 # Overview
 
-![Basic Project Structure](https://github.com/sgmerwin/FilmQueryProject/blob/master/sql_1_5_20.jpg | width = 250)
+![Basic Project Structure](https://github.com/sgmerwin/FilmQueryProject/blob/master/sql_1_5_20.jpg){:height="50%" width="50%"}
