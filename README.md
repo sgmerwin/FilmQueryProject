@@ -65,7 +65,32 @@ The database has a enough size to make the project challenging.
 
 <img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/database_size.png" width="150" height="250">
 
+Setting up the maven dependencies and the following code blocks that are in the DatabaseAccessorObject class used to access the database were the most difficult conceptual challenges. 
 
+	static {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}//static
+	
+	protected final String URL = "jdbc:mysql://localhost:3306/sdvid";
+	protected final String user = "student";
+	protected final String pass = "student";
+  
+  Connection conn = DriverManager.getConnection(this.URL, this.user, this.pass);
+	  Film film = null;
+	  String sql = "select * from film where id = ?";
+	  PreparedStatement stmt = conn.prepareStatement(sql);
+	  stmt.setInt(1, filmId);
+	  ResultSet rs = stmt.executeQuery();
+	    while (rs.next()) {
+      //code here
+      }
+
+Using data to define class attributes and generating lists so that a user can access the information with an efficient interface is really what java does so well. Getting familiar enough with the structure of the SQL database to productively develop the java code is certainly an added hurdle. There was a lot of testing SQL statements at the command line and looking through the outputs to get comfortable with the structure of the database. 
 
 
   
