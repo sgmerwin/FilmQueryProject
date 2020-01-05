@@ -19,10 +19,49 @@ Maven was used to handle the SQL database connection dependencies.
 The user runs the main method in the App class. This generates a DatabaseAccessorObject and prints options in the terminal to retrive a film by id or retrive films by a keyword search. The keyword search, searches all of the film titles and descriptions in the database. The code for the keyword search is in the App class choice_2 method. The choice_2 method puts the words from the title in a string array and then runs a for loop comparing the keyword to each string in the array. If the for loop finds a not case sensitive match, it runs the DatabaseAccessorObject's findFilmById method which handles printing the data to the terminal. 
 After the choice_2 method search the film's title, it then searches the film's description for a match with the same for loop structure. 
 
-The complexity of the project lies in the DatabaseAccessorObject referencing the SQL database correctly to retrive the desired data. 
-
-
+The complexity of the project lies in the DatabaseAccessorObject referencing the SQL database correctly to retrive the desired data. In the SQL database there is an Actor table and a Film table but these two tables have no common reference to determine the actors that are in a particular film. The SQL database has a third table, film_actor that provides the film id and an actor reference on each row. 
+Here is a screenshot of the film_actor structure. 
 
 <img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/film_actor.png" width="150" height="250">
 
+To obtain the list of actor for a specific film the follow SQL statement was used. 
+
 "select id, first_name, last_name from actor join film_actor on actor.id = film_actor.actor_id where film_actor.film_id = ?"
+
+The SQL statement accepts a film id, gets a corresponding actor id, and then references the actor table with the actor id to get the actor's first and last name. The film class has two attributes to handle the actors associated with the film: 
+
+protected List<Actor> filmActors; 
+protected List<String> actors;  
+  
+There is a for loop in the film class getFilmActors method that iterates over the filmActors list and builds the actor list. 
+Each actor's first and last name is store in the actors list as a single string using the following format:
+
+actors.add(" "+i.getActorFirst_name()+" "+i.getActorLast_name()+" ");	
+
+Then the actors list is printed to the terminal when the film's data is requested. 
+
+The DatabaseAccessorObject's findFilmById method uses the following SQL statement to build a film object:
+
+"select * from film where id = ?"
+
+Then the findFilmById method uses the film object's attributes to obtain the film's language: 
+
+int langID = film.getFilmLanguage_id();
+int filmID = film.getFilmId();
+sql = "select name from language join film on film.language_id = language.id where film.language_id = "+langID +" and film.id = "+filmID +";";
+
+The DatabaseAccessorObject's findActorById method uses the following SQL statement to build an actor object:
+
+"select * from actor where id = ?"
+
+The choice_2 method in the App class uses the following SQL statement for the keyword search:
+
+"select id, title, description from film";
+
+### Conculsion
+
+This was a great project to gain experience using jave to access an SQL database. 
+
+
+
+  
