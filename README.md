@@ -12,4 +12,4 @@ The following image is a screenshot of the project structure in Eclipse.
 
 
 
-<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/maven_dep.png" width="200" height="150">
+<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/maven_dep.png" width="250" height="100">
