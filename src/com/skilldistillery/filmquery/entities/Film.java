@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,9 +22,20 @@ public class Film {
 	protected int filmLanguage_id;
 	protected String filmRelease_year;
 	protected List<Actor> filmActors;
+	protected String filmDescription;
+	protected List<String> actors;
 
 	public Film() {
 		super();
+	}
+	
+	public String getFilmActors() {
+		//return this.filmActors.toString();
+		this.actors = new ArrayList<>();
+		for(Actor i : this.filmActors) {
+			actors.add(" "+i.getActorFirst_name()+" "+i.getActorLast_name()+" ");	
+		}//for
+		return actors.toString();
 	}
 
 	public int getFilmRental_duration() {
@@ -69,6 +81,8 @@ public class Film {
 	public String getFilmSpecial_features() {
 		return filmSpecial_features;
 	}
+	
+	
 
 	public void setFilmSpecial_features(String filmSpecial_features) {
 		this.filmSpecial_features = filmSpecial_features;
@@ -106,12 +120,17 @@ public class Film {
 		this.filmRelease_year = filmRelease_year;
 	}
 
-	public List<Actor> getFilmActors() {
-		return filmActors;
-	}
 
 	public void setFilmActors(List<Actor> filmActors) {
 		this.filmActors = filmActors;
+	}
+
+	public String getFilmDescription() {
+		return filmDescription;
+	}
+
+	public void setFilmDescription(String filmDescription) {
+		this.filmDescription = filmDescription;
 	}
 
 	@Override
@@ -119,6 +138,7 @@ public class Film {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((filmActors == null) ? 0 : filmActors.hashCode());
+		result = prime * result + ((filmDescription == null) ? 0 : filmDescription.hashCode());
 		result = prime * result + filmId;
 		result = prime * result + filmLanguage_id;
 		result = prime * result + filmLength;
@@ -145,6 +165,11 @@ public class Film {
 			if (other.filmActors != null)
 				return false;
 		} else if (!filmActors.equals(other.filmActors))
+			return false;
+		if (filmDescription == null) {
+			if (other.filmDescription != null)
+				return false;
+		} else if (!filmDescription.equals(other.filmDescription))
 			return false;
 		if (filmId != other.filmId)
 			return false;
@@ -193,8 +218,10 @@ public class Film {
 				+ ", filmLength=" + filmLength + ", filmReplacement_cost=" + filmReplacement_cost + ", filmRating="
 				+ filmRating + ", filmSpecial_features=" + filmSpecial_features + ", filmId=" + filmId + ", filmTitle="
 				+ filmTitle + ", filmLanguage_id=" + filmLanguage_id + ", filmRelease_year=" + filmRelease_year
-				+ ", filmActors=" + filmActors + "]";
+				+ ", filmActors=" + filmActors + ", filmDescription=" + filmDescription + "]";
 	}
+
+
 
 	
 	
