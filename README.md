@@ -1,4 +1,4 @@
-# FilmQueryProject
+## FilmQueryProject
 
 ### Overview
 
@@ -61,6 +61,10 @@ The choice_2 method in the App class uses the following SQL statement for the ke
 ### Conculsion
 
 This was a great project to gain experience using jave to access an SQL database. 
+The database has a enough size to make the project challenging. 
+
+<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/database_size.png" width="150" height="250">
+
 
 
 
