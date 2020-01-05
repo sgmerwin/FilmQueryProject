@@ -21,4 +21,8 @@ After the choice_2 method search the film's title, it then searches the film's d
 
 The complexity of the project lies in the DatabaseAccessorObject referencing the SQL database correctly to retrive the desired data. 
 
+
+
+<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/film_actor.png" width="100" height="250">
+
 "select id, first_name, last_name from actor join film_actor on actor.id = film_actor.actor_id where film_actor.film_id = ?"
