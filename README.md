@@ -1,5 +1,5 @@
 # FilmQueryProject
 
-# Overview
+### Overview
 
-![Basic Project Structure](https://github.com/sgmerwin/FilmQueryProject/blob/master/sql_1_5_20.jpg?s=20)
+<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/sql_1_5_20.jpg" width="100" height="100">
