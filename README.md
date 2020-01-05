@@ -46,8 +46,8 @@ The DatabaseAccessorObject's findFilmById method uses the following SQL statemen
 
 Then the findFilmById method uses the film object's attributes to obtain the film's language: 
 
-int langID = film.getFilmLanguage_id();
-int filmID = film.getFilmId();
+int langID = film.getFilmLanguage_id();<br>
+int filmID = film.getFilmId();<br>
 sql = "select name from language join film on film.language_id = language.id where film.language_id = "+langID +" and film.id = "+filmID +";";
 
 The DatabaseAccessorObject's findActorById method uses the following SQL statement to build an actor object:
@@ -80,15 +80,15 @@ Setting up the maven dependencies and the following code blocks that are in the 
 	protected final String user = "student";
 	protected final String pass = "student";
   
-  Connection conn = DriverManager.getConnection(this.URL, this.user, this.pass);
-	  Film film = null;
-	  String sql = "select * from film where id = ?";
-	  PreparedStatement stmt = conn.prepareStatement(sql);
-	  stmt.setInt(1, filmId);
-	  ResultSet rs = stmt.executeQuery();
-	    while (rs.next()) {
-      //code here
-      }
+  Connection conn = DriverManager.getConnection(this.URL, this.user, this.pass);<br>
+	  Film film = null;<br>
+	  String sql = "select * from film where id = ?";<br>
+	  PreparedStatement stmt = conn.prepareStatement(sql);<br>
+	  stmt.setInt(1, filmId);<br>
+	  ResultSet rs = stmt.executeQuery();<br>
+	    while (rs.next()) {<br>
+      //code here<br>
+      }<br>
 
 Using data to define class attributes and generating lists so that a user can access the information with an efficient interface is really what java does so well. Getting familiar enough with the structure of the SQL database to productively develop the java code is certainly an added hurdle. There was a lot of testing SQL statements at the command line and looking through the outputs to get comfortable with the structure of the database. 
 
