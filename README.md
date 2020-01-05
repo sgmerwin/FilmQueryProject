@@ -9,4 +9,4 @@ The follow image provides a basic overview of the project.
 
 
 
-<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/sql_proj_struct_1_5_20.png" width="300" height="400">
+<img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/sql_proj_struct_1_5_20.png" width="100" height="200">
