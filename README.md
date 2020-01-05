@@ -30,7 +30,7 @@ To obtain the list of actors for a specific film the follow SQL statement was us
 
 The SQL statement accepts a film id, gets a corresponding actor id, and then references the actor table with the actor id to get the actor's first and last name. The film class has two attributes to handle the actors associated with the film: 
 
-protected List<Actor> filmActors; 
+protected List<Actor> filmActors; <br>
 protected List<String> actors;  
   
 There is a for loop in the film class getFilmActors method that iterates over the filmActors list and builds the actor list. 
