@@ -13,3 +13,7 @@ The following image is a screenshot of the project structure in Eclipse.
 Maven was used to handle the SQL database connection dependencies.
 
 <img src="https://github.com/sgmerwin/FilmQueryProject/blob/master/maven_dep.png" width="250" height="100">
+
+### Details
+
+The user runs the main method in the App class. 
