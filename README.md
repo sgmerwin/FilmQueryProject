@@ -16,8 +16,8 @@ Maven was used to handle the SQL database connection dependencies.
 
 ### Details
 
-The user runs the main method in the App class. This generates a DatabaseAccessorObject and prints options in the terminal to retrive a film by id or retrive films by a keyword search. The keyword search, searches all of the film titles and descriptions in the database. The code for the keyword search is in the App class choice_2 method. The choice_2 method puts the words from the title in a string array and then runs a for loop comparing the keyword to each string in the array. If the for loop finds a not case sensitive match, it runs the DatabaseAccessorObject's findFilmById method which handles printing the data to the terminal. 
-After the choice_2 method searches the film's title, it then searches the film's description for a match with the same for loop structure. 
+The user runs the main method in the App class. This generates a DatabaseAccessorObject and prints options in the terminal to retrive a film by id or retrive films by a keyword search. The keyword search, searches all of the film titles and descriptions in the database. The code for the keyword search is in the DatabaseAccessorObject's findFilmBySearch method. The findFilmBySearch method puts the words from the title in a string array and then runs a for loop comparing the keyword to each string in the array. If the for loop finds a not case sensitive match, it runs the DatabaseAccessorObject's findFilmById method which handles printing the data to the terminal. 
+After the findFilmBySearch method searches the film's title, it then searches the film's description for a match with the same for loop structure. 
 
 The complexity of the project lies in the DatabaseAccessorObject referencing the SQL database correctly to retrive the desired data. In the SQL database there is an Actor table and a Film table but, these two tables have no common reference to determine the actors that are in a particular film. The SQL database has a third table, film_actor, that provides the film id and an actor id reference on each row. 
 Here is a screenshot of the film_actor structure. 
@@ -58,7 +58,7 @@ The choice_2 method in the App class uses the following SQL statement for the ke
 
 "select id, title, description from film";
 
-### Conculsion
+### Conclusion
 
 This was a great project to gain experience using java to access an SQL database. 
 The database has a enough size to make the project challenging. 
