@@ -134,6 +134,36 @@ public List<Actor> findActorsByFilmId(int filmId) throws SQLException {
 	return actorList;
 }
 
+public void findFilmBySearch(String str) throws SQLException{
+	  Connection conn = DriverManager.getConnection(this.URL, this.user,this.pass); 
+	  String sql = "select id, title, description from film";
+	  PreparedStatement stmt = conn.prepareStatement(sql); 
+	  ResultSet rs =stmt.executeQuery();
+	  int count = 0;
+	  while (rs.next()) {
+	  //System.out.println(rs.getString("title") + " "+rs.getString("description")); 
+	  String[] parts = rs.getString("title").split("\\s+"); 
+	  for(String i : parts) {
+	  if(str.equalsIgnoreCase(i)) { 
+		  int id = Integer.parseInt(rs.getString("id"));
+		  this.findFilmById(id);
+		  ++count;
+		  }//if 
+	  }//for 
+	  parts = rs.getString("description").split("\\s+"); 
+	  for(String i : parts) {
+	  if(str.equalsIgnoreCase(i)) { 
+		  int id = Integer.parseInt(rs.getString("id"));
+		  this.findFilmById(id); 
+		  ++count; 
+		  }//if 
+	  }//for 
+	  }//while 
+	  if(count == 0) {
+	  System.out.println("No matches in the database"); 
+	  }//if
+}
+
 public static void main(String[] args) throws SQLException {
 	DatabaseAccessorObject db = new DatabaseAccessorObject();
 	db.findFilmById(2);
