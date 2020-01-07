@@ -38,21 +38,21 @@ public class App {
 		System.out.println("Enter an integer choice");
 		choice = input.nextInt();
 		if(choice == 1) {
-			choice_1();
+			choice1();
 		}
 		if(choice == 2) {
-			choice_2();
+			choice2();
 		}
 		if(choice == 3) {
-			choice_3();
+			choice3();
 		}
 		else {
-			choice_4();
+			choice4();
 		}
 		}//while
 	}//menu
 	
-	public void choice_1() throws SQLException {
+	public void choice1() throws SQLException {
 		while(exit == false) {
 		System.out.println("Enter a film id");
 		id = input.nextInt();
@@ -61,7 +61,7 @@ public class App {
 		}//while
 	}//choice_1
 	
-	public void choice_2() throws SQLException {
+	public void choice2() throws SQLException {
 		while(exit == false) {
 		System.out.println();	
 		System.out.println("Enter a search keyword"); 
@@ -71,14 +71,14 @@ public class App {
 		}//while
 	}//choice_2
 	
-	public void choice_3() {
+	public void choice3() {
 		while(exit == false) {
 		System.out.println("Exiting Application");
 		exit = true;
 		}
 	}//choice_3
 	
-	public void choice_4() throws SQLException {
+	public void choice4() throws SQLException {
 		System.out.println("Enter an integer 1, 2, or 3");
 		menu();
 	}

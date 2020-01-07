@@ -69,7 +69,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	    if(film != null) {
 	    	int langID = film.getFilmLanguage_id();
 	    	int filmID = film.getFilmId();
-//	    	sql = "select name from language join film on film.language_id = language.id where film.language_id = "+langID +" and film.id = "+filmID +";";
 	    	sql = "select name from language join film on film.language_id = language.id where film.language_id = ? and film.id = ?;";
 		    stmt = conn.prepareStatement(sql);
 		    stmt.setInt(1, langID);
