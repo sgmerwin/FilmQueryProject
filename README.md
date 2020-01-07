@@ -46,12 +46,12 @@ The DatabaseAccessorObject's findFilmById method uses the following SQL statemen
 
 Then the findFilmById method uses the film object's attributes to obtain the film's language: 
 
-int langID = film.getFilmLanguage_id();
-int filmID = film.getFilmId();
-sql = "select name from language join film on film.language_id = language.id where film.language_id = ? and film.id = ?;";
-stmt = conn.prepareStatement(sql);
-stmt.setInt(1, langID);
-stmt.setInt(2, filmID);
+int langID = film.getFilmLanguage_id();<br>
+int filmID = film.getFilmId();<br>
+sql = "select name from language join film on film.language_id = language.id where film.language_id = ? and film.id = ?;";<br>
+stmt = conn.prepareStatement(sql);<br>
+stmt.setInt(1, langID);<br>
+stmt.setInt(2, filmID);<br>
 
 The DatabaseAccessorObject's findActorById method uses the following SQL statement to build an actor object:
 
