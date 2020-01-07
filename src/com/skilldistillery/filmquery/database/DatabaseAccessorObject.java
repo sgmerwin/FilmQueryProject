@@ -26,8 +26,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	protected final String user = "student";
 	protected final String pass = "student";
 	
-	
-
   public String getURL() {
 		return URL;
 	}
@@ -138,29 +136,19 @@ public List<Actor> findActorsByFilmId(int filmId) throws SQLException {
 
 public void findFilmBySearch(String str) throws SQLException{
 	  Connection conn = DriverManager.getConnection(this.URL, this.user,this.pass); 
-	  String sql = "select id, title, description from film";
+	  //String sql = "select id, title, description from film";
+	  String sql = "select id from film where title like ? or description like ?";
 	  PreparedStatement stmt = conn.prepareStatement(sql); 
+	  stmt.setString(1, "%"+str+"%");
+	  stmt.setString(2, "%"+str+"%");
 	  ResultSet rs =stmt.executeQuery();
 	  int count = 0;
 	  while (rs.next()) {
-	  //System.out.println(rs.getString("title") + " "+rs.getString("description")); 
-	  String[] parts = rs.getString("title").split("\\s+"); 
-	  for(String i : parts) {
-	  if(str.equalsIgnoreCase(i)) { 
 		  int id = Integer.parseInt(rs.getString("id"));
 		  this.findFilmById(id);
 		  ++count;
-		  }//if 
-	  }//for 
-	  parts = rs.getString("description").split("\\s+"); 
-	  for(String i : parts) {
-	  if(str.equalsIgnoreCase(i)) { 
-		  int id = Integer.parseInt(rs.getString("id"));
-		  this.findFilmById(id); 
-		  ++count; 
-		  }//if 
-	  }//for 
-	  }//while 
+	  }//while
+	  
 	  if(count == 0) {
 	  System.out.println("No matches in the database"); 
 	  }//if
