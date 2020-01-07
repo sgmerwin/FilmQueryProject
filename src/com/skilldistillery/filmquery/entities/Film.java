@@ -5,19 +5,19 @@ import java.util.List;
 
 public class Film {
 	
-	protected int filmRental_duration;
-	protected Double filmRental_rate;
-	protected int filmLength;
-	protected Double filmReplacement_cost;
-	protected String filmRating;
-	protected String filmSpecial_features;
-	protected int filmId;
-	protected String filmTitle;
-	protected int filmLanguage_id;
-	protected String filmRelease_year;
-	protected List<Actor> filmActors;
-	protected String filmDescription;
-	protected List<String> actors;
+	private int filmRental_duration;
+	private Double filmRental_rate;
+	private int filmLength;
+	private Double filmReplacement_cost;
+	private String filmRating;
+	private String filmSpecial_features;
+	private int filmId;
+	private String filmTitle;
+	private int filmLanguage_id;
+	private String filmRelease_year;
+	private List<Actor> filmActors;
+	private String filmDescription;
+	private List<String> actors;
 
 	public Film() {
 		super();

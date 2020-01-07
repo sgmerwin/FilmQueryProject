@@ -2,9 +2,9 @@ package com.skilldistillery.filmquery.entities;
 
 public class Actor {
 	
-	protected int actorId;
-	protected String actorFirst_name;
-	protected String actorLast_name;
+	private int actorId;
+	private String actorFirst_name;
+	private String actorLast_name;
 	
 	public Actor() {
 		super();
